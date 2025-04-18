@@ -1,0 +1,58 @@
+export const productsData = [
+  {
+    id: 1,
+    name: "Syltherine",
+    description: "Stylish cafe chair",
+    price: "Rp 2.500.000",
+    imageUrl: "/images/image1.svg",
+  },
+  {
+    id: 2,
+    name: "Leviosa",
+    description: "Stylish living room set",
+    price: "Rp 5.000.000",
+    imageUrl: "/images/image2.svg",
+  },
+  {
+    id: 3,
+    name: "Lolito",
+    description: "Luxury big sofa",
+    price: "Rp 5.000.000",
+    imageUrl: "/images/image3.svg",
+  },
+  {
+    id: 4,
+    name: "Respira",
+    description: "Outdoor bar table",
+    price: "Rp 3.500.000",
+    imageUrl: "/images/image4.svg",
+  },
+  {
+    id: 5,
+    name: "Grifo",
+    description: "Night lamp",
+    price: "Rp 3.500.000",
+    imageUrl: "/images/image5.svg",
+  },
+  {
+    id: 6,
+    name: "Muggo ",
+    description: "Small mug",
+    price: "Rp 3.500.000",
+    imageUrl: "/images/image6.svg",
+  },
+  {
+    id: 7,
+    name: "Pingky",
+    description: "Cute bed set",
+    price: "Rp 3.500.000",
+    imageUrl: "/images/image7.svg",
+  },
+  {
+    id: 8,
+    name: "Potty",
+    description: "Minimalist flower pot",
+    price: "Rp 3.500.000",
+    imageUrl: "/images/image8.svg",
+  },
+];
