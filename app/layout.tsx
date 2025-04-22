@@ -3,6 +3,7 @@ import "./globals.css";
 
 import { Montserrat } from "next/font/google";
 import Layout from "@/components/layout";
+import { Suspense } from "react";
 
 // Initialize the font with options
 const montserrat = Montserrat({
@@ -27,7 +28,11 @@ export default function RootLayout({
       className={`overflow-y-hidden no-scrollbar bg-[#FFFFFF] ${montserrat.className}`}
     >
       <body className={`${montserrat.className}`}>
-        <Layout children={children} />
+        <main className="">
+          <Suspense fallback={<p>Loading...</p>}>
+            <Layout children={children} />
+          </Suspense>
+        </main>
       </body>
     </html>
   );

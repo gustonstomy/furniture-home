@@ -3,13 +3,16 @@ import React from "react";
 import { icons } from "./icons";
 import CustomSheet from "./CustomSheet";
 import { useSheetStore } from "@/store";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function TopNav() {
   const { closeSheet } = useSheetStore();
+  const router = useRouter();
   return (
     <main className="w-full relative">
       {" "}
-      <nav className="flex justify-between items-center py-[29px] bg-[#FFFFFF] px-[10px] lg:px-[54px] ">
+      <nav className="flex justify-between items-center py-[29px] lg:py-[18px] xl:py-[24px] 2xl:py-[29px] bg-[#FFFFFF] px-[10px] lg:px-[54px] ">
         <div className="flex md:hidden cursor-pointer">
           <CustomSheet
             id="menu"
@@ -67,18 +70,30 @@ export default function TopNav() {
         <div className="md:hidden"></div>
 
         <div className="hidden md:flex md:gap-[16px] xl:gap-[75px]">
-          <h1 className="text-[#000000] font-semibold text-[16px] cursor-pointer">
+          <Link
+            href={"/"}
+            className="text-[#000000] font-semibold text-[16px] cursor-pointer"
+          >
             Home
-          </h1>
-          <h1 className="text-[#000000] font-semibold text-[16px] cursor-pointer">
+          </Link>
+          <Link
+            href={"/shop"}
+            className="text-[#000000] font-semibold text-[16px] cursor-pointer"
+          >
             Shop
-          </h1>
-          <h1 className="text-[#000000] font-semibold text-[16px] cursor-pointer">
+          </Link>
+          <Link
+            href={"/about"}
+            className="text-[#000000] font-semibold text-[16px] cursor-pointer"
+          >
             About
-          </h1>
-          <h1 className="text-[#000000] font-semibold text-[16px] cursor-pointer">
+          </Link>
+          <Link
+            href={"/contact"}
+            className="text-[#000000] font-semibold text-[16px] cursor-pointer"
+          >
             Contact
-          </h1>
+          </Link>
         </div>
         <div className="hidden md:flex md:gap-[16px] xl:gap-[45px] items-center">
           <div className="relative cursor-pointer h-8 w-8">

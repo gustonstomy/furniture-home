@@ -31,7 +31,7 @@ export default function BrowseSection() {
         {products.map((product) => (
           <div
             key={product.name}
-            className=" flex flex-col items-center justify-center gap-4"
+            className=" flex flex-col items-center justify-center gap-4  p-4 2xl:p-0"
           >
             <Image
               src={product.imageUrl}
