@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function Footer() {
@@ -22,36 +23,36 @@ export default function Footer() {
             </h3>
             <ul className="space-y-[46px]">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href={"/"}
                   className="hover:underline text-[16px] text-[#000000] font-semibold"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href={"/shop"}
                   className="hover:underline text-[16px] text-[#000000] font-semibold"
                 >
                   Shop
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href={"/about"}
                   className="hover:underline text-[16px] text-[#000000] font-semibold"
                 >
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href={"/contact"}
                   className="hover:underline text-[16px] text-[#000000] font-semibold"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -61,20 +62,20 @@ export default function Footer() {
             </h3>
             <ul className="space-y-[46px]">
               <li>
-                <a
+                <Link
                   href="#"
                   className="hover:underline text-[16px] text-[#000000] font-semibold"
                 >
                   Payment Options
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="#"
                   className="hover:underline text-[16px] text-[#000000] font-semibold"
                 >
                   Returns
-                </a>
+                </Link>
               </li>
               <li>
                 <a

@@ -55,4 +55,32 @@ export const productsData = [
     price: "Rp 3.500.000",
     imageUrl: "/images/image8.svg",
   },
+  {
+    id: 9,
+    name: "Muggo ",
+    description: "Small mug",
+    price: "Rp 3.500.000",
+    imageUrl: "/images/image6.svg",
+  },
+  {
+    id: 10,
+    name: "Leviosa",
+    description: "Stylish living room set",
+    price: "Rp 5.000.000",
+    imageUrl: "/images/image2.svg",
+  },
+  {
+    id: 11,
+    name: "Respira",
+    description: "Outdoor bar table",
+    price: "Rp 3.500.000",
+    imageUrl: "/images/image4.svg",
+  },
+  {
+    id: 12,
+    name: "Syltherine",
+    description: "Stylish cafe chair",
+    price: "Rp 2.500.000",
+    imageUrl: "/images/image1.svg",
+  },
 ];

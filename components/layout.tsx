@@ -19,10 +19,10 @@ const Layout: React.FC<HomeProps> = ({ children }) => {
   // }
 
   return (
-    <section className="bg-[#FFFFFF]">
+    <section className="bg-[#FFFFFF] relative">
       <TopNav />
       <div>
-        <aside></aside>
+        {/* <aside></aside> */}
         <section>
           <div className="bg-[#FFFFFF]">{children}</div>
         </section>

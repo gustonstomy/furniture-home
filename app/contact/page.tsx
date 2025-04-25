@@ -1,11 +1,6 @@
 "use client";
 
 import { BreadcrumbWithCustomSeparator } from "@/components/breadcrumbs";
-import Footer from "@/components/footer";
-import Products from "@/components/products";
-import FeatureHighlights from "@/components/shop/featureHighlights";
-import { productsData } from "@/store/data";
-import FilterBar from "@/components/shop/filterBar";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
@@ -42,15 +37,11 @@ export default function Page() {
             className="w-[40px] h-[40px] sm:w-[50px] sm:h-[50px] md:w-[60px] md:h-[60px] lg:w-[70px] lg:h-[70px]"
           />
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-black mb-2 sm:mb-4">
-            Shop
+            Contact
           </h1>
-          <BreadcrumbWithCustomSeparator title="Shop" />
+          <BreadcrumbWithCustomSeparator title="Contact" />
         </div>
       </div>
-      <FilterBar />
-      <Products productsData={productsData} />
-      <FeatureHighlights />
-      <Footer />
     </section>
   );
 }

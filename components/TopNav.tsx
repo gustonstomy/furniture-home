@@ -3,14 +3,13 @@ import React from "react";
 import { icons } from "./icons";
 import CustomSheet from "./CustomSheet";
 import { useSheetStore } from "@/store";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function TopNav() {
   const { closeSheet } = useSheetStore();
-  const router = useRouter();
+
   return (
-    <main className="w-full relative">
+    <main className="w-full sticky top-0 z-50 bg-[#FFFFFF] shadow-lg">
       {" "}
       <nav className="flex justify-between items-center py-[29px] lg:py-[18px] xl:py-[24px] 2xl:py-[29px] bg-[#FFFFFF] px-[10px] lg:px-[54px] ">
         <div className="flex md:hidden cursor-pointer">
@@ -26,30 +25,34 @@ export default function TopNav() {
             }
           >
             <div className="flex flex-col gap-[20px] pl-[2rem] mt-[2rem] bg-[#FFFFFF]">
-              <h1
+              <Link
+                href={"/"}
                 onClick={() => closeSheet()}
                 className="text-[#000000] font-semibold text-[16px] cursor-pointer"
               >
                 Home
-              </h1>
-              <h1
+              </Link>
+              <Link
+                href={"/shop"}
                 onClick={() => closeSheet()}
                 className="text-[#000000] font-semibold text-[16px] cursor-pointer"
               >
                 Shop
-              </h1>
-              <h1
+              </Link>
+              <Link
+                href={"/about"}
                 onClick={() => closeSheet()}
                 className="text-[#000000] font-semibold text-[16px] cursor-pointer"
               >
                 About
-              </h1>
-              <h1
+              </Link>
+              <Link
+                href={"/contact"}
                 onClick={() => closeSheet()}
                 className="text-[#000000] font-semibold text-[16px] cursor-pointer"
               >
                 Contact
-              </h1>
+              </Link>
             </div>
           </CustomSheet>
           {/* <icons.Menu className="text-black h-8 w-8" /> */}

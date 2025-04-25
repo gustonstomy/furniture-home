@@ -9,7 +9,7 @@ export default function CoverImage() {
         src={"/images/coverImage.svg"}
         fill
         sizes="100%"
-        className=" object-cover"
+        className=" object-cover bg-gray-300"
         priority
       />
       <div className="  bg-[#FFF3E3] absolute top-10 md:top-58 xl:top-36 rounded-xl right-0 lg:right-20 xl:right-26 2xl:right-56 pt-[10px] xl:pt-[62px] pb-[10px] xl:pb-[37px] px-[10px] lg:px-[26px] xl:px-[39px]">
@@ -29,7 +29,7 @@ export default function CoverImage() {
             Ut elit tellus, luctus nec <br className="md:hidden" />
             ullamcorper mattis.
           </p>
-          <div className="w-[100px] xl:w-[250px] 2xl:w-[300px] my-2 2xl:mt-[46px] 2xl:mb-[37px] ">
+          <div className="w-[100px] md:w-150px] lg:w-[200px] xl:w-[250px] 2xl:w-[300px] my-2 2xl:mt-[46px] 2xl:mb-[37px] ">
             <button className="cursor-pointer text-[12px] lg:text-[16px] w-full font-bold text-[#FFFFFF] leading-1.5 bg-[#B88E2F] hover:bg-[#B88E0F] rounded-[10px] py-[16px] lg:py-[26px] 2xl:py-[40px] px-[10px] xl:px-[30px]">
               BUY NOW
             </button>

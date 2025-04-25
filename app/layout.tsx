@@ -23,15 +23,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`overflow-y-hidden no-scrollbar bg-[#FFFFFF] ${montserrat.className}`}
-    >
+    <html lang="en" className={` bg-[#FFFFFF] ${montserrat.className}`}>
       <body className={`${montserrat.className}`}>
-        <main className="">
-          <Suspense fallback={<p>Loading...</p>}>
-            <Layout children={children} />
-          </Suspense>
+        <main className="relative h-screen">
+          <Layout children={children} />
         </main>
       </body>
     </html>

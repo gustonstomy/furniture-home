@@ -7,7 +7,7 @@ import GridImages from "@/components/Home/your-setup";
 
 export default function Home() {
   return (
-    <section className="bg-[#FFFFFF] h-screen overflow-y-auto">
+    <section className="bg-[#FFFFFF]">
       <CoverImage />
       <BrowseSection />
       <OutProducts />
