@@ -4,6 +4,7 @@ import "./globals.css";
 import { Montserrat } from "next/font/google";
 import Layout from "@/components/layout";
 import { Suspense } from "react";
+import ClientHydrationWrapper from "@/components/ClientHydrationWrapper";
 
 // Initialize the font with options
 const montserrat = Montserrat({
@@ -23,11 +24,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={` bg-[#FFFFFF] ${montserrat.className}`}>
+    <html lang="en" className={` ${montserrat.className}`}>
       <body className={`${montserrat.className}`}>
-        <main className="relative h-screen">
-          <Layout children={children} />
-        </main>
+        <ClientHydrationWrapper>
+          <main className="relative h-screen">
+            <Layout children={children} />
+          </main>
+        </ClientHydrationWrapper>
       </body>
     </html>
   );

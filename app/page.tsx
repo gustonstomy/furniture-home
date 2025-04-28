@@ -12,7 +12,10 @@ export default function Home() {
       <BrowseSection />
       <OutProducts />
       <Bedroom />
-      <GridImages />
+      <div className="hidden lg:block">
+        <GridImages />
+      </div>
+      <div className="py-12"></div>
       <Footer />
     </section>
   );

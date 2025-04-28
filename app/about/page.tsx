@@ -3,6 +3,9 @@
 import { BreadcrumbWithCustomSeparator } from "@/components/breadcrumbs";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import CartPage from "@/components/cart/CartPage";
+import FeatureHighlights from "@/components/shop/featureHighlights";
+import Footer from "@/components/footer";
 
 export default function Page() {
   const [isAnimated, setIsAnimated] = useState(false);
@@ -42,6 +45,9 @@ export default function Page() {
           <BreadcrumbWithCustomSeparator title="About" />
         </div>
       </div>
+      <CartPage />
+      <FeatureHighlights />
+      <Footer />
     </section>
   );
 }

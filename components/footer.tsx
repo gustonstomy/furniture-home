@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="mb-[10rem] mt-[5rem] bg-white border-t border-gray-200 px-4 md:px-12 lg:px-24 pt-16 pb-8 text-gray-700 max-w-[380px] sm:max-w-[680px] md:max-w-[700px]  lg:max-w-[1500px] mx-auto">
+    <footer className="mb-[10rem] bg-white border-t border-gray-200 px-4 md:px-12 lg:px-24 pt-16 pb-8 text-gray-700 max-w-[380px] sm:max-w-[680px] md:max-w-[700px]  lg:max-w-[1500px] mx-auto">
       <div className="flex flex-col md:flex-row justify-between gap-10">
         {/* Company Info */}
         <div className="max-w-sm">

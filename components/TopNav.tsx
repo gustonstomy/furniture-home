@@ -4,12 +4,13 @@ import { icons } from "./icons";
 import CustomSheet from "./CustomSheet";
 import { useSheetStore } from "@/store";
 import Link from "next/link";
+import CartDrawer from "./cart/CartDrawer";
 
 export default function TopNav() {
   const { closeSheet } = useSheetStore();
 
   return (
-    <main className="w-full sticky top-0 z-50 bg-[#FFFFFF] shadow-lg">
+    <main className="w-full sticky top-0 z-50 bg-[#FFFFFF]">
       {" "}
       <nav className="flex justify-between items-center py-[29px] lg:py-[18px] xl:py-[24px] 2xl:py-[29px] bg-[#FFFFFF] px-[10px] lg:px-[54px] ">
         <div className="flex md:hidden cursor-pointer">
@@ -110,33 +111,37 @@ export default function TopNav() {
           </div>
           <div className="relative cursor-pointer h-8 w-8">
             <Image
-              alt="person"
+              alt="search"
               src={"/icons/akar-icons_search.svg"}
               fill
               sizes="100%"
               className="object-contain"
             />
           </div>
+
           <div className="relative cursor-pointer h-8 w-8">
             <Image
-              alt="person"
+              alt="favorite"
               src={"/icons/akar-icons_heart.svg"}
               fill
               sizes="100%"
               className="object-contain"
             />
           </div>
-          <div className="relative cursor-pointer h-8 w-8">
+          <Link href={"/cart"} className="relative cursor-pointer h-8 w-8">
             <Image
-              alt="person"
+              alt="cart"
               src={"/icons/ant-design_shopping-cart-outlined.svg"}
               fill
               sizes="100%"
               className="object-contain"
             />
-          </div>
+          </Link>
         </div>
       </nav>
+      <div className="">
+        <CartDrawer />
+      </div>
     </main>
   );
 }

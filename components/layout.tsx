@@ -3,6 +3,8 @@
 import React, { ReactNode } from "react";
 import TopNav from "./TopNav";
 import { usePathname } from "next/navigation";
+import { useCartDrawer } from "@/store";
+import BackToTop from "./back-to-top";
 
 interface HomeProps {
   children: ReactNode;
@@ -11,6 +13,7 @@ interface HomeProps {
 const Layout: React.FC<HomeProps> = ({ children }) => {
   const pathname = usePathname();
   const noLayoutRoutes = ["/login"];
+  const { openSheet, toggleSheet } = useCartDrawer();
 
   // const isNoLayoutRoute = noLayoutRoutes.includes(pathname);
 
@@ -19,12 +22,19 @@ const Layout: React.FC<HomeProps> = ({ children }) => {
   // }
 
   return (
-    <section className="bg-[#FFFFFF] relative">
+    <section
+      onClick={() => {
+        if (openSheet) toggleSheet(false);
+      }}
+      className="bg-[#FFFFFF] relative"
+    >
+      {openSheet && <div className="absolute z-50 inset-0 bg-black/50" />}
       <TopNav />
+      <BackToTop />
       <div>
         {/* <aside></aside> */}
         <section>
-          <div className="bg-[#FFFFFF]">{children}</div>
+          <div className="bg-[#FFFFFF] ">{children}</div>
         </section>
       </div>
     </section>

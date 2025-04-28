@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { icons } from "./icons";
+import { useCartDrawer } from "@/store";
 
 type Product = {
   id: number;
@@ -10,9 +11,14 @@ type Product = {
   imageUrl: string;
 };
 const Products = ({ productsData }: { productsData: Product[] }) => {
+  const { openSheet, toggleSheet } = useCartDrawer();
+
   const handleAddToCart = () => {
     console.log("Added to cart");
+    toggleSheet(true);
   };
+
+  console.log("Added to cart", openSheet);
   return (
     <div className="  items-center grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4  gap-4  rounded-[20px]  lg:p-[20px] max-w-[380px] sm:max-w-[680px] md:max-w-[700px]  lg:max-w-[1300px] mx-auto">
       {/* Map through products */}

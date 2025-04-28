@@ -116,7 +116,7 @@ const ImageSlider = () => {
   }, [activeSlide, productsData.length, isScrolling]);
 
   return (
-    <div className=" w-full xl:w-1/3 flex flex-col relative overflow-y-hidden">
+    <div className=" w-full xl:w-1/3 flex flex-col relative overflow-y-hidden no-scrollbar">
       <div
         ref={sliderRef}
         className="h-[80%] w-full overflow-x-auto overflow-y-hidden no-scrollbar snap-x snap-mandatory"
