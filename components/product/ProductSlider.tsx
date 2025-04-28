@@ -95,7 +95,7 @@ function ProductSlider({
             {images.map((image, index) => (
               <div
                 key={index}
-                className="keen-slider__slide h-[400px] w-[400px] xl:h-[600px] rounded-lg bg-[#F9F1E7] flex items-center justify-center"
+                className="keen-slider__slide h-[400px] w-[400px] xl:h-[500px] 2xl:h-[500px] 3xl:h-[600px]  rounded-lg bg-[#F9F1E7] flex items-center justify-center"
               >
                 <img
                   src={image}

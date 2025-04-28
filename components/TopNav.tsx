@@ -12,7 +12,7 @@ export default function TopNav() {
   return (
     <main className="w-full sticky top-0 z-50 bg-[#FFFFFF]">
       {" "}
-      <nav className="flex justify-between items-center py-[29px] lg:py-[18px] xl:py-[24px] 2xl:py-[29px] bg-[#FFFFFF] px-[10px] lg:px-[54px] ">
+      <nav className="flex justify-between items-center py-[29px] lg:py-[14px]  2xl:py-[29px] bg-[#FFFFFF] px-[10px] lg:px-[54px] ">
         <div className="flex md:hidden cursor-pointer">
           <CustomSheet
             id="menu"

@@ -24,7 +24,7 @@ export function BreadcrumbWithCustomSeparator({ title }: { title?: string }) {
         </BreadcrumbItem>
 
         <BreadcrumbSeparator>
-          <BiChevronRight className="size-28 text-black" />
+          <BiChevronRight className="!size-8 text-black" />
         </BreadcrumbSeparator>
         <BreadcrumbItem>
           <BreadcrumbPage className="text-[12px] lg:text-[16px] font-light text-black">

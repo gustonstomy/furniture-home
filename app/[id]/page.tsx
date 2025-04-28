@@ -5,8 +5,9 @@ import React from "react";
 import ProductDetails from "@/components/product/productDetails";
 import Products from "@/components/products";
 import Footer from "@/components/footer";
-import { Breadcrumb } from "@/components/ui/breadcrumb";
 import ProductTabs from "@/components/product/productTabs";
+import { BreadcrumbWithCustomSeparator } from "@/components/breadcrumbs";
+import { BiChevronRight } from "react-icons/bi";
 
 export default function Pages({ params }: { params: { product: string } }) {
   const productImages = [
@@ -47,8 +48,13 @@ export default function Pages({ params }: { params: { product: string } }) {
   ];
   return (
     <div className="">
-      <div className="p-[3rem] md:p-[4rem] mb-[2rem] bg-[#F9F1E7] ">
-        <Breadcrumb />
+      <div className="p-[1.5rem] 2xl:p-[2rem]  mb-[0.5rem] 2xl:mb-[1rem] bg-[#F9F1E7] xl:px-14 2xl:px-[20rem]">
+        <div className="flex  items-center   2xl:max-w-[1300px] mx-auto ">
+          <BreadcrumbWithCustomSeparator title="Shop" />
+          <BiChevronRight className="size-8 text-black" />
+          <div className="h-10 border-l-2 mx-4 border-[#9F9F9F]"></div>
+          <span className="text-black text-[16px] ">Asgaard sofa</span>
+        </div>
       </div>
       <section className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:p-[20px] max-w-[380px] sm:max-w-[680px] md:max-w-[900px]  lg:max-w-[1300px] mx-auto ">
         <div>

@@ -73,7 +73,6 @@ export default function CartDrawer() {
           </button>
         </div>
 
-        {/* Cart Items */}
         <div className="flex-1 overflow-y-auto p-6 space-y-6 ">
           {cartItems.length === 0 ? (
             <p className="text-center text-gray-500">Your cart is empty.</p>
@@ -97,11 +96,7 @@ export default function CartDrawer() {
                     </span>
                   </p>
                 </div>
-                <button
-                  onClick={() => {
-                    /* Add remove logic if needed */
-                  }}
-                >
+                <button onClick={() => {}}>
                   <X className="w-5 h-5 text-gray-400 hover:text-gray-700" />
                 </button>
               </div>
@@ -124,16 +119,22 @@ export default function CartDrawer() {
                 router.push("/cart");
                 toggleSheet(false);
               }}
-              className="flex-1 border-2 border-black py-2 rounded-md font-semibold hover:bg-black hover:text-white transition"
+              className="flex-1 border-2 border-black py-2 rounded-md font-semibold hover:bg-black hover:text-white "
             >
               Cart
             </button>
-            <button className="flex-1 border-2 border-black py-2 rounded-md font-semibold hover:bg-black hover:text-white transition">
+            <button
+              onClick={() => {
+                router.push("/checkout");
+                toggleSheet(false);
+              }}
+              className="flex-1 border-2 border-black py-2 rounded-md font-semibold hover:bg-black hover:text-white "
+            >
               Checkout
             </button>
           </div>
 
-          <button className="w-full border-2 border-black py-2 rounded-md font-semibold hover:bg-black hover:text-white transition">
+          <button className="w-full border-2 border-black py-2 rounded-md font-semibold hover:bg-black hover:text-white ">
             Comparison
           </button>
         </div>

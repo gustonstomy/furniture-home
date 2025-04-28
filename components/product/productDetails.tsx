@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 import { Minus, Plus } from "lucide-react";
-import { Facebook, Linkedin, Twitter } from "lucide-react";
-import { icons } from "@/components/icons";
+
 import Image from "next/image";
+import { useCartDrawer } from "@/store";
+import { handleAddToCart } from "@/lib/functions";
 
 export default function ProductDetails() {
   const [quantity, setQuantity] = useState(1);
@@ -42,7 +43,7 @@ export default function ProductDetails() {
       </div>
 
       {/* Description */}
-      <p className="text-black text-lg text-[13px]">
+      <p className="text-black text-lg md:text-[13px]">
         Setting the bar as one of the loudest speakers in its class, the Kilburn
         is a compact, stout-hearted hero with a well-balanced audio which boasts
         a clear midrange and extended highs for a sound.
@@ -82,7 +83,10 @@ export default function ProductDetails() {
           </button>
         </div>
         <div className="w-full ">
-          <button className="flex-1 text-[12px] md:text-[20px] w-full border-2 border-black py-4 rounded-xl font-semibold hover:bg-black hover:text-white transition">
+          <button
+            onClick={handleAddToCart}
+            className="flex-1 text-[12px] md:text-[20px] w-full border-2 border-black py-4 rounded-xl font-semibold hover:bg-black hover:text-white transition"
+          >
             Add To Cart
           </button>
         </div>
@@ -118,9 +122,27 @@ export default function ProductDetails() {
       <div className="flex items-center gap-4 mt-4">
         <span className="font-semibold text-black">Share:</span>
 
-        <Image alt="img" src={"/icons/facebook.svg"} width={20} height={20} />
-        <Image alt="img" src={"/icons/linkedin.svg"} width={20} height={20} />
-        <Image alt="img" src={"/icons/X.svg"} width={20} height={20} />
+        <Image
+          alt="img"
+          src={"/icons/facebook.svg"}
+          width={20}
+          height={20}
+          className="cursor-pointer"
+        />
+        <Image
+          alt="img"
+          src={"/icons/linkedin.svg"}
+          width={20}
+          height={20}
+          className="cursor-pointer"
+        />
+        <Image
+          alt="img"
+          src={"/icons/X.svg"}
+          width={20}
+          height={20}
+          className="cursor-pointer"
+        />
       </div>
     </div>
   );

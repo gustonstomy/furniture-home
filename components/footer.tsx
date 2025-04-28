@@ -110,7 +110,7 @@ export default function Footer() {
 
       {/* Bottom copyright */}
       <div className="mt-16 border-t border-gray-200 pt-4 text-[16px] text-black">
-        <p>2023 Funiro. All rights reserved</p>
+        <p>2025 Funiro. All rights reserved</p>
       </div>
     </footer>
   );

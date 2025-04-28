@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { icons } from "./icons";
 import { useCartDrawer } from "@/store";
+import { useRouter } from "next/navigation";
 
 type Product = {
   id: number;
@@ -12,13 +13,8 @@ type Product = {
 };
 const Products = ({ productsData }: { productsData: Product[] }) => {
   const { openSheet, toggleSheet } = useCartDrawer();
+  const router = useRouter();
 
-  const handleAddToCart = () => {
-    console.log("Added to cart");
-    toggleSheet(true);
-  };
-
-  console.log("Added to cart", openSheet);
   return (
     <div className="  items-center grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4  gap-4  rounded-[20px]  lg:p-[20px] max-w-[380px] sm:max-w-[680px] md:max-w-[700px]  lg:max-w-[1300px] mx-auto">
       {/* Map through products */}
@@ -28,7 +24,7 @@ const Products = ({ productsData }: { productsData: Product[] }) => {
           <div className="absolute inset-0 rounded-xl p-2 bg-[#3A3A3A] opacity-0 group-hover:opacity-70 transition-opacity duration-300 z-10 pointer-events-none"></div>
           <div className="absolute pr-[2.5rem] pl-[1.5rem] w-full  top-[30%]  rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 ">
             <button
-              onClick={handleAddToCart}
+              onClick={() => router.push("/2")}
               className="bg-white cursor-pointer w-full text-[#B88E2F] font-semibold text-[12px] sm:text-[16px]  leading-1.5 rounded-[10px] py-[16px] lg:py-[18px] px-[10px]  z-20"
             >
               Add to Cart

@@ -37,9 +37,9 @@ export default function BackToTop() {
       {isVisible && (
         <button
           onClick={handleClick}
-          className="fixed bottom-10 right-7 z-[100] cursor-pointer rounded-full bg-primary200 p-3 bg-black text-white shadow-lg transition-opacity duration-300"
+          className="fixed bottom-10 right-7 z-[100] cursor-pointer rounded-full bg-primary200 p-3 bg-[#F9F1E7] text-black shadow-lg transition-opacity duration-300"
         >
-          <ArrowUp className="text-white" />
+          <ArrowUp className="text-black" />
         </button>
       )}
     </div>

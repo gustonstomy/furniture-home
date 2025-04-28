@@ -50,24 +50,24 @@ export default function ProductTabs() {
           {/* Images */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Card 1 */}
-            <div className="bg-[#f9f1e7] rounded-lg p-6 flex justify-center">
+            <div className="bg-[#f9f1e7] rounded-lg p- flex justify-center">
               <Image
                 src={"/images/sofeLg2.svg"}
                 alt="Sofa 1"
-                width={500}
-                height={500}
-                className="object-contain"
+                width={100}
+                height={100}
+                className="object-contain w-[300px] h-[300px] md:w-[400px] md:h-[300px] 2xl:w-[600px] 2xl:h-[350px] "
               />
             </div>
 
             {/* Card 2 */}
-            <div className="bg-[#f9f1e7] rounded-lg p-6 flex justify-center">
+            <div className="bg-[#f9f1e7] rounded-lg p- flex justify-center">
               <Image
                 src={"/images/sofeLg1.svg"}
                 alt="Sofa 2"
                 width={500}
                 height={500}
-                className="object-contain"
+                className="object-contain w-[300px] h-[300px] md:w-[400px] md:h-[300px] 2xl:w-[600px] 2xl:h-[350px]"
               />
             </div>
           </div>
