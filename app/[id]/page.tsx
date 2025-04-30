@@ -9,7 +9,13 @@ import ProductTabs from "@/components/product/productTabs";
 import { BreadcrumbWithCustomSeparator } from "@/components/breadcrumbs";
 import { BiChevronRight } from "react-icons/bi";
 
-export default function Pages({ params }: { params: { product: string } }) {
+export default async function Pages({
+  params,
+}: {
+  params: Promise<{ id: number }>;
+}) {
+  const { id } = await params;
+
   const productImages = [
     "/images/OutdoorSlider5.svg",
     "/images/OutdoorSlider3.svg",
@@ -46,11 +52,12 @@ export default function Pages({ params }: { params: { product: string } }) {
       imageUrl: "/images/image4.svg",
     },
   ];
+  const obj = [{ title: "Shop", link: "/shop" }];
   return (
     <div className="">
       <div className="p-[1.5rem] 2xl:p-[2rem]  mb-[0.5rem] 2xl:mb-[1rem] bg-[#F9F1E7] xl:px-14 2xl:px-[20rem]">
         <div className="flex  items-center   2xl:max-w-[1300px] mx-auto ">
-          <BreadcrumbWithCustomSeparator title="Shop" />
+          <BreadcrumbWithCustomSeparator obj={obj} />
           <BiChevronRight className="size-8 text-black" />
           <div className="h-10 border-l-2 mx-4 border-[#9F9F9F]"></div>
           <span className="text-black text-[16px] ">Asgaard sofa</span>

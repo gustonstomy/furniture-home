@@ -17,7 +17,7 @@ export default function Bedroom() {
   return (
     <section className="flex flex-col md:flex-row md:h-[60%] lg:px-8 xl:px-0 gap-8 mt-[56px] max-w-[380px] sm:max-w-[680px] md:max-w-[700px] xl:max-w-[1200px] 2xl:max-w-[1500px] mx-auto">
       {/* First div - Text content */}
-      <div className="md:w-1/3 flex justify-center flex-col gap-4 text-[#3A3A3A] font-bold text-[40px]">
+      <div className="px-4 md:px-0 md:w-1/3 flex justify-center flex-col gap-4 text-[#3A3A3A] font-bold text-[40px]">
         <p>50+ Beautiful rooms inspiration</p>
         <p className="flex text-[16px] text-[#616161] break-words">
           Our designer already made a lot of beautiful prototipe of rooms that

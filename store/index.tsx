@@ -12,6 +12,17 @@ export const useSheetStore = create<SheetStore>()((set) => ({
   openSheet: (id) => set({ currentSheetId: id }),
   closeSheet: () => set({ currentSheetId: null }),
 }));
+
+type FavoriteDrawerProp = {
+  openSheetF: boolean;
+  toggleSheetF: (state: boolean) => void;
+};
+
+export const useFavoriteDrawer = create<FavoriteDrawerProp>()((set) => ({
+  openSheetF: false,
+  toggleSheetF: (state) => set({ openSheetF: state }),
+}));
+
 type CartDrawerProp = {
   openSheet: boolean;
   toggleSheet: (state: boolean) => void;

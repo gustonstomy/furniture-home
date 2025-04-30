@@ -97,9 +97,11 @@ function ProductSlider({
                 key={index}
                 className="keen-slider__slide h-[400px] w-[400px] xl:h-[500px] 2xl:h-[500px] 3xl:h-[600px]  rounded-lg bg-[#F9F1E7] flex items-center justify-center"
               >
-                <img
+                <Image
                   src={image}
                   alt={`Slide ${index + 1}`}
+                  width={400}
+                  height={400}
                   className="h-full w-full object-contain "
                 />
               </div>

@@ -29,8 +29,8 @@ export default function CoverImage() {
             Ut elit tellus, luctus nec <br className="md:hidden" />
             ullamcorper mattis.
           </p>
-          <div className="w-[100px] md:w-150px] lg:w-[200px] xl:w-[250px] 2xl:w-[300px] my-2 2xl:mt-[46px] 2xl:mb-[37px] ">
-            <button className="cursor-pointer text-[12px] lg:text-[16px] w-full font-bold text-[#FFFFFF] leading-1.5 bg-[#B88E2F] hover:bg-[#B88E0F] rounded-[10px] py-[16px] lg:py-[26px] 2xl:py-[40px] px-[10px] xl:px-[30px]">
+          <div className="w-[100px] md:w-150px] lg:w-[200px] xl:w-[250px] 2xl:w-[230px] my-2 2xl:mt-[46px] 2xl:mb-[37px] ">
+            <button className="cursor-pointer text-[12px] lg:text-[16px] w-full font-bold text-[#FFFFFF] leading-1.5 bg-[#B88E2F] hover:bg-[#B88E0F] py-[16px] lg:py-[26px] 2xl:py-[30px]  px-[10px] xl:px-[30px]">
               BUY NOW
             </button>
           </div>

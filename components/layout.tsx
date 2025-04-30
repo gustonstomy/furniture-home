@@ -22,12 +22,7 @@ const Layout: React.FC<HomeProps> = ({ children }) => {
   // }
 
   return (
-    <section
-      onClick={() => {
-        if (openSheet) toggleSheet(false);
-      }}
-      className="bg-[#FFFFFF] relative"
-    >
+    <section className="bg-[#FFFFFF] relative">
       {openSheet && <div className="absolute z-50 inset-0 bg-black/50" />}
       <TopNav />
       <BackToTop />

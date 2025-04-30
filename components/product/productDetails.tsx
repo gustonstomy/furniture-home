@@ -7,8 +7,43 @@ import Image from "next/image";
 import { useCartDrawer } from "@/store";
 import { handleAddToCart } from "@/lib/functions";
 
+const buttons = [
+  {
+    id: 1,
+    title: "L",
+  },
+  {
+    id: 2,
+    title: "Xl",
+  },
+  {
+    id: 3,
+    title: "XS",
+  },
+];
+
+const colors = [
+  {
+    id: 1,
+    title: "Black",
+    className: "w-6 h-6 rounded-full bg-purple-500 cursor-pointer",
+  },
+  {
+    id: 2,
+    title: "White",
+    className: "w-6 h-6 rounded-full bg-black cursor-pointer",
+  },
+  {
+    id: 3,
+    title: "Brown",
+    className: "w-6 h-6 rounded-full bg-[#b7903c] cursor-pointer",
+  },
+];
+
 export default function ProductDetails() {
   const [quantity, setQuantity] = useState(1);
+  const [btnId, setBtnId] = useState<number>();
+  const [clr, setClr] = useState<number>();
 
   const handleDecrease = () => {
     if (quantity > 1) setQuantity(quantity - 1);
@@ -53,11 +88,21 @@ export default function ProductDetails() {
       <div>
         <h3 className="text-[#9F9F9F] text-[14px] mt-4 mb-2">Size</h3>
         <div className="flex gap-4">
-          <button className="px-4 py-2 border rounded bg-[#b7903c] text-white font-semibold">
-            L
-          </button>
-          <button className="px-4 py-2 border rounded bg-[#f9f3e8]">XL</button>
-          <button className="px-4 py-2 border rounded bg-[#f9f3e8]">XS</button>
+          {buttons.map((button) => (
+            <button
+              key={button.id}
+              className={`px-4 py-2 border rounded cursor-pointer ${
+                btnId === button.id
+                  ? "bg-[#B88E2F] text-white"
+                  : "text-black bg-[#F9F1E7]  hover:bg-[#B88E2F] hover:text-white"
+              }`}
+              onClick={() => {
+                setBtnId(button.id);
+              }}
+            >
+              {button.title}
+            </button>
+          ))}
         </div>
       </div>
 
@@ -65,33 +110,47 @@ export default function ProductDetails() {
       <div>
         <h3 className="text-[#9F9F9F] text-[14px] mt-4 mb-2">Color</h3>
         <div className="flex gap-4">
-          <div className="w-6 h-6 rounded-full bg-purple-500 cursor-pointer" />
-          <div className="w-6 h-6 rounded-full bg-black cursor-pointer" />
-          <div className="w-6 h-6 rounded-full bg-[#b7903c] cursor-pointer" />
+          {colors.map((color) => (
+            <div
+              key={color.id}
+              className={`cursor-pointer  ${color.className} ${
+                clr === color.id ? "border-2 border-yellow-500" : ""
+              }`}
+              onClick={() => {
+                setClr(color.id);
+              }}
+            ></div>
+          ))}
         </div>
       </div>
 
       {/* Quantity and Buttons */}
       <div className="flex items-center gap-4 mt-6 w-full">
         <div className="flex items-center justify-between px-4 border rounded-xl overflow-hidden w-full  ">
-          <button onClick={handleDecrease} className="md:px-2 py-4">
+          <button
+            onClick={handleDecrease}
+            className="md:px-2 py-4 cursor-pointer "
+          >
             <Minus />
           </button>
           <span className="px-4">{quantity}</span>
-          <button onClick={handleIncrease} className="md:px-2 py-4">
+          <button
+            onClick={handleIncrease}
+            className="md:px-2 py-4 cursor-pointer "
+          >
             <Plus />
           </button>
         </div>
         <div className="w-full ">
           <button
             onClick={handleAddToCart}
-            className="flex-1 text-[12px] md:text-[20px] w-full border-2 border-black py-4 rounded-xl font-semibold hover:bg-black hover:text-white transition"
+            className="cursor-pointer  flex-1 text-[12px] md:text-[20px] w-full border-2 border-black py-4 rounded-xl font-semibold hover:bg-black hover:text-white transition"
           >
             Add To Cart
           </button>
         </div>
         <div className="w-full ">
-          <button className="flex-1 text-[12px] md:text-[20px]  w-full border-2 border-black py-4 rounded-xl font-semibold hover:bg-black hover:text-white transition">
+          <button className=" cursor-pointer flex-1 text-[12px] md:text-[20px]  w-full border-2 border-black py-4 rounded-xl font-semibold hover:bg-black hover:text-white transition">
             Compare
           </button>
         </div>

@@ -9,7 +9,7 @@ import Footer from "@/components/footer";
 
 export default function Page() {
   const [isAnimated, setIsAnimated] = useState(false);
-
+  const obj = [{ title: "Contact", link: "#" }];
   useEffect(() => {
     setIsAnimated(true);
   }, []);
@@ -42,7 +42,7 @@ export default function Page() {
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-black mb-2 sm:mb-4">
             Contact
           </h1>
-          <BreadcrumbWithCustomSeparator title="Contact" />
+          <BreadcrumbWithCustomSeparator obj={obj} />
         </div>
       </div>
       <ContactUs />

@@ -6,16 +6,16 @@ export default function FilterBar() {
     <div className="mb-[46px] shadow-sm bg-[#F9F1E7] w-full py-4 px-4 lg:px-16 border-2 lg:py-8 flex flex-wrap items-center justify-center md:justify-between gap-4 md:gap-14 lg:gap-4 text-sm xl:px-[6rem] 2xl:px-[21rem]">
       {/* Left side */}
       <div className="flex items-center gap-4">
-        <button className="flex items-center gap-2 text-black font-regular text-[16px]">
-          <SlidersHorizontal className="w-5 h-5" />
+        <button className="flex items-center gap-2 text-black font-regular text-[12px] md:text-[16px]">
+          <SlidersHorizontal className="md:w-5 h-4 md:h-5 w-4" />
           Filter
         </button>
         <div className="flex items-center gap-2">
-          <Grid3x3 className="w-5 h-5 text-black" />
-          <List className="w-5 h-5 text-black" />
+          <Grid3x3 className="md:w-5 h-4 md:h-5 w-4 text-black" />
+          <List className="md:w-5 h-4 md:h-5 w-4 text-black" />
         </div>
         <div className="h-6 w-px bg-gray-300 mx-2" />
-        <span className="text-black text-[16px] font-regular">
+        <span className="text-black text-[12px] md:text-[16px] font-regular">
           Showing 1–16 of 32 results
         </span>
       </div>
@@ -23,7 +23,9 @@ export default function FilterBar() {
       {/* Right side */}
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2">
-          <span className="text-black font-regular text-[16px] ">Show</span>
+          <span className="text-black font-regular text-[12px] md:text-[16px] ">
+            Show
+          </span>
           <input
             type="text"
             value="16"
@@ -32,7 +34,9 @@ export default function FilterBar() {
           />
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-black font-regular text-[16px] ">Short by</span>
+          <span className="text-black font-regular text-[12px] md:text-[16px] ">
+            Short by
+          </span>
           <select className="h-10 lg:h-14 px-4 bg-white border-none text-[#9F9F9F] text-[16px]  font-regular ">
             <option>Default</option>
             <option>Price: Low to High</option>

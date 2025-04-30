@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { icons } from "./icons";
 import { useCartDrawer } from "@/store";
 import { useRouter } from "next/navigation";
@@ -12,17 +12,37 @@ type Product = {
   imageUrl: string;
 };
 const Products = ({ productsData }: { productsData: Product[] }) => {
-  const { openSheet, toggleSheet } = useCartDrawer();
+  const [isTapped, setIsTapped] = useState(0);
+
+  const handleProductTap = (id: number) => {
+    setIsTapped(id);
+  };
   const router = useRouter();
 
   return (
     <div className="  items-center grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4  gap-4  rounded-[20px]  lg:p-[20px] max-w-[380px] sm:max-w-[680px] md:max-w-[700px]  lg:max-w-[1300px] mx-auto">
       {/* Map through products */}
       {productsData.map((product) => (
-        <div key={product.id} className="relative mx-auto p-2 group ">
+        <div
+          key={product.id}
+          className="relative mx-auto p-2 group cursor-pointer"
+          onClick={() => handleProductTap(product.id)}
+        >
           {/* Overlay element */}
-          <div className="absolute inset-0 rounded-xl p-2 bg-[#3A3A3A] opacity-0 group-hover:opacity-70 transition-opacity duration-300 z-10 pointer-events-none"></div>
-          <div className="absolute pr-[2.5rem] pl-[1.5rem] w-full  top-[30%]  rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 ">
+          <div
+            className={`absolute inset-0 rounded-xl p-2 bg-[#3A3A3A] transition-opacity duration-300 z-10 pointer-events-none ${
+              isTapped === product?.id
+                ? "opacity-70"
+                : "opacity-0 group-hover:opacity-70"
+            }`}
+          ></div>
+          <div
+            className={`absolute pr-[2.5rem] pl-[1.5rem] w-full  top-[30%]  rounded-xl transition-opacity duration-300 z-20 ${
+              isTapped === product?.id
+                ? "opacity-100"
+                : "opacity-0 group-hover:opacity-100"
+            }`}
+          >
             <button
               onClick={() => router.push("/2")}
               className="bg-white cursor-pointer w-full text-[#B88E2F] font-semibold text-[12px] sm:text-[16px]  leading-1.5 rounded-[10px] py-[16px] lg:py-[18px] px-[10px]  z-20"
@@ -31,7 +51,13 @@ const Products = ({ productsData }: { productsData: Product[] }) => {
             </button>
           </div>
 
-          <div className="absolute  flex justify-between pr-[1.5rem] pl-[1rem] w-full  top-[42%]  rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 ">
+          <div
+            className={`absolute  flex justify-between pr-[1.5rem] pl-[1rem] w-full  top-[42%]  rounded-xl transition-opacity duration-300 z-10 ${
+              isTapped === product?.id
+                ? "opacity-100"
+                : "opacity-0 group-hover:opacity-100"
+            }`}
+          >
             <div className="flex gap-1">
               <icons.Share className="text-[#FFFFFF] text-[12px] h-5 w-5 sm:h-4 sm:w-4 lg:h-5 lg:w-5" />
               <p className="text-[#FFFFFF] text-[16px] cursor-pointer sm:text-[12px] xl:text-[16px] font-semibold">

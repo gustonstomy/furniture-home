@@ -45,11 +45,56 @@
 
 /* Hide the scrollbar */
 .no-scrollbar::-webkit-scrollbar {
-  display: none; /* Hides scrollbar for webkit browsers */
+  display: none;
 }
 
 .no-scrollbar {
-  scrollbar-width: none; /* Hides scrollbar for Firefox */
+  scrollbar-width: none;
+}
+
+@keyframes slideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.animate-slide-from-right {
+  animation: slideFromRight 0.5s ease-out forwards;
+}
+
+@keyframes slideFromRightLg {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide-from-rightLg {
+  animation: slideFromRightLg 0.5s ease-out forwards;
+}
+
+@keyframes slideToRight {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+}
+
+.animate-slide-to-right {
+  animation: slideToRight 0.5s ease-in forwards;
 }
 
 :root {

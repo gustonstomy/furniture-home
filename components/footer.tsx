@@ -40,10 +40,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href={"/about"}
+                  href={"/blog"}
                   className="hover:underline text-[16px] text-[#000000] font-semibold"
                 >
-                  About
+                  Blog
                 </Link>
               </li>
               <li>
@@ -91,15 +91,15 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-gray-400 mb-[55px]">
               Newsletter
             </h3>
-            <form className="flex items-center border-b border-black ">
+            <form className="flex items-center  border-black ">
               <input
                 type="email"
                 placeholder="Enter Your Email Address"
-                className="flex-1 outline-none text-sm placeholder-gray-400"
+                className="flex-1 outline-none  md:placeholder:text-[13px] 2xl:placeholder:text-[14px]  text-sm placeholder-gray-400 border-b-2 border-black"
               />
               <button
                 type="submit"
-                className="text-sm font-semibold border-b ml-12"
+                className=" text-[13px] 2xl:text-sm font-semibold border-b-2 border-black ml-6"
               >
                 SUBSCRIBE
               </button>

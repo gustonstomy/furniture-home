@@ -10,10 +10,16 @@ import {
 } from "@/components/ui/breadcrumb";
 import { BiChevronRight } from "react-icons/bi";
 
-export function BreadcrumbWithCustomSeparator({ title }: { title?: string }) {
+export function BreadcrumbWithCustomSeparator({
+  title,
+  obj,
+}: {
+  title?: string;
+  obj?: any;
+}) {
   return (
     <Breadcrumb>
-      <BreadcrumbList>
+      <BreadcrumbList className="space-x-0">
         <BreadcrumbItem>
           <BreadcrumbLink
             href="/"
@@ -23,14 +29,22 @@ export function BreadcrumbWithCustomSeparator({ title }: { title?: string }) {
           </BreadcrumbLink>
         </BreadcrumbItem>
 
-        <BreadcrumbSeparator>
-          <BiChevronRight className="!size-8 text-black" />
-        </BreadcrumbSeparator>
-        <BreadcrumbItem>
-          <BreadcrumbPage className="text-[12px] lg:text-[16px] font-light text-black">
-            {title ? title : "Breadcrumb"}
-          </BreadcrumbPage>
-        </BreadcrumbItem>
+        {obj &&
+          obj?.map((o: any) => (
+            <div key={o.title} className="flex items-center">
+              <BreadcrumbSeparator className="gap-0">
+                <BiChevronRight className="!size-8 text-black" />
+              </BreadcrumbSeparator>
+              <BreadcrumbItem>
+                <BreadcrumbLink
+                  href={o?.link}
+                  className="text-[12px] lg:text-[16px] font-light text-black"
+                >
+                  {o?.title ? o?.title : "Breadcrumb"}
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+            </div>
+          ))}
       </BreadcrumbList>
     </Breadcrumb>
   );

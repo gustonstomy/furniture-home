@@ -5,6 +5,7 @@ import { useSheetStore } from "@/store";
 import clsx from "clsx";
 import { IoClose } from "react-icons/io5";
 import Image from "next/image";
+import Link from "next/link";
 
 type SheetProps = {
   id: string;
@@ -73,17 +74,22 @@ const CustomSheet = ({
           >
             {showHeader && (
               <div className="flex items-center justify-between  pt-3.5 pl-2.5 text-black mt-[1rem]">
-                <div className="flex items-center ">
+                <Link
+                  onClick={() => closeSheet()}
+                  href={"/"}
+                  className={` items-center flex gap-2 `}
+                >
                   <Image
                     alt="house"
                     src={"/images/houseL.svg"}
                     width={70}
                     height={70}
+                    className="h-10 w-10  md:h-16 md:w-16 "
                   />
-                  <h1 className="text-[#000000] font-bold text-[36px] cursor-pointer">
+                  <h1 className="text-[#000000] font-bold text-[28px] mr-5 ms:mr-0 md:text-[36px] cursor-pointer">
                     Furniro
                   </h1>
-                </div>
+                </Link>
                 <button type="submit" onClick={closeSheet} className="p-2 pr-4">
                   <IoClose size={34} />
                 </button>

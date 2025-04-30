@@ -8,10 +8,11 @@ import { productsData } from "@/store/data";
 import FilterBar from "@/components/shop/filterBar";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import PaginationBtn from "@/components/paginationBtn";
 
 export default function Page() {
   const [isAnimated, setIsAnimated] = useState(false);
-
+  const obj = [{ title: "Shop", link: "#" }];
   useEffect(() => {
     setIsAnimated(true);
   }, []);
@@ -44,11 +45,12 @@ export default function Page() {
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-black mb-2 sm:mb-4">
             Shop
           </h1>
-          <BreadcrumbWithCustomSeparator title="Shop" />
+          <BreadcrumbWithCustomSeparator obj={obj} />
         </div>
       </div>
       <FilterBar />
       <Products productsData={productsData} />
+      <PaginationBtn />
       <FeatureHighlights />
       <Footer />
     </section>
