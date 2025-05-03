@@ -5,15 +5,15 @@ export default function BrowseSection() {
   const products = [
     {
       name: "Dining",
-      imageUrl: "/images/Dining.svg",
+      imageUrl: "/images/Dining.webp",
     },
     {
       name: "Living",
-      imageUrl: "/images/livingroom.svg",
+      imageUrl: "/images/livingroom.webp",
     },
     {
       name: "Bedroom",
-      imageUrl: "/images/bedroom.svg",
+      imageUrl: "/images/bedroom.webp",
     },
   ];
   return (

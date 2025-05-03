@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React, { useState } from "react";
 import { icons } from "./icons";
@@ -78,13 +80,13 @@ const Products = ({ productsData }: { productsData: Product[] }) => {
             </div>
           </div>
           {/* Content */}
-          <div className="   relative h-[350px] sm:h-[300px] w-[350px] sm:w-[220px] md:w-[230px] xl:w-[280px] rounded-[20px]">
+          <div className=" bg-[#B88E2F]  relative h-[350px] sm:h-[300px] w-[350px] sm:w-[220px] md:w-[230px] xl:w-[280px] rounded-[20px]">
             <Image
               src={product.imageUrl}
               alt={product.name}
               fill
               sizes="100%"
-              className="object-cover rounded-[10px]"
+              className="object-cover rounded-[10px] bg-[#B88E2F]"
               priority
             />
           </div>

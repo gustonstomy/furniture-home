@@ -1,5 +1,3 @@
-"use client";
-
 import ProductSlider from "@/components/product/ProductSlider";
 import React from "react";
 import ProductDetails from "@/components/product/productDetails";

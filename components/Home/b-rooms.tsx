@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { icons } from "../icons";
-import { productsData } from "@/store/data";
+import { slidesData } from "@/store/data";
 
 export default function Bedroom() {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -35,7 +35,7 @@ export default function Bedroom() {
         <div className="h-full w-full relative">
           <Image
             alt="bedroom"
-            src={"/images/bedroomWall.svg"}
+            src={"/images/bedroomWall.webp"}
             fill
             sizes="100%"
             className="object-cover"
@@ -57,7 +57,7 @@ const ImageSlider = () => {
   // Function to handle next button click
   const handleNext = () => {
     if (sliderRef.current && !isScrolling) {
-      const newIndex = (activeSlide + 1) % productsData.length;
+      const newIndex = (activeSlide + 1) % slidesData.length;
       goToSlide(newIndex);
     }
   };
@@ -74,7 +74,7 @@ const ImageSlider = () => {
     if (sliderRef.current) {
       setIsScrolling(true);
       setActiveSlide(index);
-      const slideWidth = 350; // Should match your actual slide width
+      const slideWidth = 350;
       const scrollAmount = index * slideWidth;
 
       sliderRef.current.scrollTo({
@@ -82,14 +82,12 @@ const ImageSlider = () => {
         behavior: "smooth",
       });
 
-      // Reset scrolling flag after animation completes
       setTimeout(() => {
         setIsScrolling(false);
-      }, 500); // Matches the duration of smooth scroll
+      }, 500);
     }
   };
 
-  // Listen to scroll events to update active slide
   useEffect(() => {
     const handleScroll = () => {
       if (sliderRef.current && !isScrolling) {
@@ -99,7 +97,7 @@ const ImageSlider = () => {
 
         if (
           newActiveSlide !== activeSlide &&
-          newActiveSlide < productsData.length
+          newActiveSlide < slidesData.length
         ) {
           setActiveSlide(newActiveSlide);
         }
@@ -113,16 +111,16 @@ const ImageSlider = () => {
         slider.removeEventListener("scroll", handleScroll);
       };
     }
-  }, [activeSlide, productsData.length, isScrolling]);
+  }, [activeSlide, slidesData.length, isScrolling]);
 
   return (
-    <div className=" w-full xl:w-1/3 flex flex-col relative overflow-y-hidden no-scrollbar">
+    <div className="w-full xl:w-1/3 flex flex-col relative overflow-y-hidden no-scrollbar">
       <div
         ref={sliderRef}
         className="h-[80%] w-full overflow-x-auto overflow-y-hidden no-scrollbar snap-x snap-mandatory"
       >
         <div className="flex gap-2 w-max">
-          {productsData.map((slide, index) => (
+          {slidesData.map((slide, index) => (
             <div
               key={index}
               className="w-84 h-120 relative flex-shrink-0 snap-start"
@@ -150,7 +148,7 @@ const ImageSlider = () => {
 
       {/* Pagination dots */}
       <div className="flex gap-4 pl-4 pt-[3rem]">
-        {productsData.map((_, index) => (
+        {slidesData.map((_, index) => (
           <button
             key={index}
             onClick={() => handlePaginationClick(index)}

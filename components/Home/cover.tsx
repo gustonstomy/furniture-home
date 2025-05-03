@@ -6,7 +6,7 @@ export default function CoverImage() {
     <div className="relative h-[400px] md:h-[600px] lg:h-[650px] xl:h-[700px] 2xl:h-[750px] w-full ">
       <Image
         alt="cover"
-        src={"/images/coverImage.svg"}
+        src={"/images/coverImage.webp"}
         fill
         sizes="100%"
         className=" object-cover bg-gray-300"
