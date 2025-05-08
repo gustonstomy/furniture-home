@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { icons } from "../icons";
 import { slidesData } from "@/store/data";
+import BlurImage from "../BlurImage";
 
 export default function Bedroom() {
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -31,17 +32,16 @@ export default function Bedroom() {
       </div>
 
       {/* Second div - Center image */}
+
       <div className="hidden sm:hidden lg:block w-full xl:w-1/3 relative">
-        <div className="h-full w-full relative">
-          <Image
-            alt="bedroom"
-            src={"/images/bedroomWall.webp"}
-            fill
-            sizes="100%"
-            className="object-cover"
-            priority
-          />
-        </div>
+        <BlurImage
+          alt="bedroom"
+          src={"/images/bedroomWall.webp"}
+          className="object-cover bg-gray-300"
+          fill
+          quality={85}
+          style={{ objectFit: "cover" }}
+        />
       </div>
 
       <ImageSlider />
@@ -125,13 +125,14 @@ const ImageSlider = () => {
               key={index}
               className="w-84 h-120 relative flex-shrink-0 snap-start"
             >
-              <Image
+              <BlurImage
                 alt={`bedroom slide ${index + 1}`}
                 src={slide.imageUrl}
+                className="object-cover bg-gray-300"
                 fill
-                sizes="100%"
-                className="object-cover"
+                quality={85}
                 priority={index === 0}
+                style={{ objectFit: "cover" }}
               />
             </div>
           ))}

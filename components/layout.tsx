@@ -15,11 +15,11 @@ const Layout: React.FC<HomeProps> = ({ children }) => {
   const noLayoutRoutes = ["/login"];
   const { openSheet, toggleSheet } = useCartDrawer();
 
-  // const isNoLayoutRoute = noLayoutRoutes.includes(pathname);
+  const isNoLayoutRoute = noLayoutRoutes.includes(pathname);
 
-  // if (isNoLayoutRoute) {
-  //   return <main className="bg-primarybg">{children}</main>;
-  // }
+  if (isNoLayoutRoute) {
+    return <main className="bg-primarybg">{children}</main>;
+  }
 
   return (
     <section className="bg-[#FFFFFF] relative">

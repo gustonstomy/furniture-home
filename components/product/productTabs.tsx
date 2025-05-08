@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import BlurImage from "../BlurImage";
 
 export default function ProductTabs() {
   const [activeTab, setActiveTab] = useState("description");
@@ -50,24 +51,26 @@ export default function ProductTabs() {
           {/* Images */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Card 1 */}
-            <div className="bg-[#f9f1e7] rounded-lg p- flex justify-center">
-              <Image
+            <div className="bg-[#f9f1e7] flex justify-center  w-[300px] h-[300px] md:w-[400px] md:h-[300px] 2xl:w-[600px] 2xl:h-[350px] rounded-2xl">
+              <BlurImage
                 src={"/images/sofeLg2.svg"}
                 alt="Sofa 1"
-                width={100}
-                height={100}
-                className="object-contain w-[300px] h-[300px] md:w-[400px] md:h-[300px] 2xl:w-[600px] 2xl:h-[350px] "
+                className="object-contain  bg-[#f9f1e7] rounded-2xl"
+                fill
+                quality={85}
+                style={{ objectFit: "contain" }}
               />
             </div>
 
             {/* Card 2 */}
-            <div className="bg-[#f9f1e7] rounded-lg p- flex justify-center">
-              <Image
+            <div className="bg-[#f9f1e7] flex justify-center  w-[300px] h-[300px] md:w-[400px] md:h-[300px] 2xl:w-[600px] 2xl:h-[350px] rounded-2xl">
+              <BlurImage
                 src={"/images/sofeLg1.svg"}
                 alt="Sofa 2"
-                width={500}
-                height={500}
-                className="object-contain w-[300px] h-[300px] md:w-[400px] md:h-[300px] 2xl:w-[600px] 2xl:h-[350px]"
+                className="object-contain bg-[#f9f1e7] rounded-2xl"
+                fill
+                quality={85}
+                style={{ objectFit: "contain" }}
               />
             </div>
           </div>

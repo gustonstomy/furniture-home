@@ -61,7 +61,7 @@ export default function ProductDetails() {
           Asgaard sofa
         </h1>
         <p className="text-[#9F9F9F] font-medium text-2xl md:text-xl lg:text-2xl mt-2">
-          Rs. 250,000.00
+          Gh₵ 3,000
         </p>
       </div>
 

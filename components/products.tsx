@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { icons } from "./icons";
 import { useCartDrawer } from "@/store";
 import { useRouter } from "next/navigation";
+import BlurImage from "./BlurImage";
 
 type Product = {
   id: number;
@@ -81,13 +82,22 @@ const Products = ({ productsData }: { productsData: Product[] }) => {
           </div>
           {/* Content */}
           <div className=" bg-[#B88E2F]  relative h-[350px] sm:h-[300px] w-[350px] sm:w-[220px] md:w-[230px] xl:w-[280px] rounded-[20px]">
-            <Image
+            {/* <Image
               src={product.imageUrl}
               alt={product.name}
               fill
               sizes="100%"
               className="object-cover rounded-[10px] bg-[#B88E2F]"
               priority
+            /> */}
+
+            <BlurImage
+              src={product.imageUrl}
+              alt={product.name}
+              className="object-cover rounded-[10px] bg-[#B88E2F]"
+              fill
+              quality={85}
+              style={{ objectFit: "cover" }}
             />
           </div>
           <div className="absolute top-10 right-10 bg-[#E97171] rounded-full h-10 flex w-10 items-center justify-center text-[12px] text-center text-[#FFFFFF]">

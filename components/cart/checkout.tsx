@@ -163,19 +163,17 @@ export default function BillingDetailsForm() {
                 <span className="mx-2 text-black text-[16px]">x</span>
                 <span className="text-black text-[16px]">1</span>
               </div>
-              <span>Rs. 250,000.00</span>
+              <span> Gh₵ 3,000</span>
             </div>
 
             <div className="flex justify-between py-4 border-b md:border-none border-gray-200">
               <span className="text-black text-[16px]">Subtotal</span>
-              <span>Rs. 250,000.00</span>
+              <span> Gh₵ 3,000</span>
             </div>
 
             <div className="flex justify-between py-4 border-b md:border-none border-gray-200">
               <span className="text-black text-[16px]">Total</span>
-              <span className="font-bold text-xl text-[#B88E2F]">
-                Rs. 250,000.00
-              </span>
+              <span className="font-bold text-xl text-[#B88E2F]">Gh₵</span>
             </div>
           </div>
 

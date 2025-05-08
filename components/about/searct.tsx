@@ -185,7 +185,7 @@ export default function BlogPost() {
             <h2 className="text-2xl font-bold mb-4">Recent Posts</h2>
             <div className="space-y-8 ">
               {recentPost.map((post) => (
-                <div key={post.title} className="">
+                <div key={post.title} className="cursor-pointer">
                   <div className="flex gap-2 items-center ">
                     <div className="rounded-xl h-18 w-18 bg-black flex-shrink-0">
                       <Image

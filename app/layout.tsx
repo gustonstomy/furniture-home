@@ -4,7 +4,10 @@ import "./globals.css";
 import { Montserrat } from "next/font/google";
 import Layout from "@/components/layout";
 import { Suspense } from "react";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
 import ClientHydrationWrapper from "@/components/ClientHydrationWrapper";
+import { ReactQueryProvider } from "@/components/QueryProvider";
 
 // Initialize the font with options
 const montserrat = Montserrat({
@@ -49,9 +52,12 @@ export default function RootLayout({
     <html lang="en" className={` ${montserrat.className}`}>
       <body className={`${montserrat.className}`}>
         <ClientHydrationWrapper>
-          <main className="relative h-screen">
-            <Layout children={children} />
-          </main>
+          <ReactQueryProvider>
+            <main className="relative h-screen">
+              <Layout children={children} />
+            </main>
+            <ReactQueryDevtools initialIsOpen={false} />
+          </ReactQueryProvider>
         </ClientHydrationWrapper>
       </body>
     </html>

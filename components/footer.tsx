@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="max-w-sm">
           <h2 className="text-2xl font-bold text-black mb-[42px]">Funiro.</h2>
           <address className="not-italic text-[16px] text-[#9F9F9F]">
-            400 University Drive Suite 200 Coral <br /> Gables,
+            Ontario street Madina Accra ,
             <br />
-            FL 33134 USA
+            Accra Ghana
           </address>
         </div>
 

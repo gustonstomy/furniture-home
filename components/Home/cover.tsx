@@ -1,16 +1,27 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import BlurImage from "../BlurImage";
 
 export default function CoverImage() {
   return (
     <div className="relative h-[400px] md:h-[600px] lg:h-[650px] xl:h-[700px] 2xl:h-[750px] w-full ">
-      <Image
+      {/* <Image
         alt="cover"
         src={"/images/coverImage.webp"}
         fill
         sizes="100%"
         className=" object-cover bg-gray-300"
         priority
+      /> */}
+      <BlurImage
+        alt="cover"
+        src={"/images/coverImage.webp"}
+        className="object-cover bg-gray-300"
+        fill
+        quality={85}
+        style={{ objectFit: "cover" }}
       />
       <div className="  bg-[#FFF3E3] absolute top-10 md:top-58 xl:top-36 rounded-xl right-0 lg:right-20 xl:right-26 2xl:right-56 pt-[10px] xl:pt-[62px] pb-[10px] xl:pb-[37px] px-[10px] lg:px-[26px] xl:px-[39px]">
         <div className="flex flex-col gap-[5px] lg:gap-[20px] ">

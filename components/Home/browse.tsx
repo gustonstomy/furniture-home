@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import BlurImage from "../BlurImage";
 
 export default function BrowseSection() {
   const products = [
@@ -31,14 +34,22 @@ export default function BrowseSection() {
         {products.map((product) => (
           <div
             key={product.name}
-            className=" flex flex-col items-center justify-center gap-4  p-4 2xl:p-0"
+            className=" flex flex-col items-center justify-center gap-4  w-auto h-[520px] p-4 2xl:p-0"
           >
-            <Image
+            {/* <Image
               src={product.imageUrl}
               alt={product.name}
               width={1000}
               height={1000}
               className="w-full h-auto object-cover"
+            /> */}
+            <BlurImage
+              src={product.imageUrl}
+              alt={product.name}
+              className="object-cover rounded-xl"
+              fill
+              quality={85}
+              style={{ objectFit: "cover" }}
             />
             <p className="text-[24px] font-semibold leading-[36px] mb-[1rem] sm:mb-0 text-[#333333]">
               {product.name}

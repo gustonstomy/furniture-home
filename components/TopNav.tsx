@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { icons } from "./icons";
 import CustomSheet from "./CustomSheet";
-import { useFavoriteDrawer, useSheetStore } from "@/store";
+import { useAuthStore, useFavoriteDrawer, useSheetStore } from "@/store";
 import Link from "next/link";
 import { CartDrawer } from "@/components/cart/CartDrawer";
 import clsx from "clsx";
@@ -14,16 +14,20 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { useRouter } from "next/navigation";
 
 export default function TopNav() {
   const [openSearch, setOpenSearch] = useState<boolean>(false);
   const { closeSheet } = useSheetStore();
+  const isLoggedIn = useAuthStore((state) => state.isLoggedIn());
+  const { accessToken } = useAuthStore();
   const { toggleSheetF } = useFavoriteDrawer();
   const [searchValue, setSearchValue] = useState("");
   const searchInputRef = useRef<HTMLInputElement>(null);
 
   const [isLargeScreen, setIsLargeScreen] = useState(false);
 
+  const router = useRouter();
   useEffect(() => {
     const handleResize = () => {
       setIsLargeScreen(window.innerWidth >= 768);
@@ -56,6 +60,8 @@ export default function TopNav() {
       searchInputRef.current.focus();
     }
   }, [openSearch]);
+  console.log("isLoggedIn :", isLoggedIn);
+  console.log("accessToken :", accessToken);
 
   return (
     <main className="w-full sticky top-0 z-50 bg-[#FFFFFF]">
@@ -171,8 +177,16 @@ export default function TopNav() {
         </Link>
 
         <div className={` ${openSearch ? "hidden" : "flex md:hidden"}`}>
-          {" "}
-          <Profile />
+          {isLoggedIn ? (
+            <Profile />
+          ) : (
+            <button
+              onClick={() => router.push("/login")}
+              className="cursor-pointer text-6 font-bold text-[#FFFFFF]  bg-[#B88E2F] hover:bg-[#B88E0F] py-2 px-4 rounded-2xl"
+            >
+              log in
+            </button>
+          )}
         </div>
 
         <div
@@ -265,7 +279,6 @@ export default function TopNav() {
               className="object-contain"
             />
           </div>
-          <Profile />
           <div
             onClick={() => toggleSheetF(true)}
             className="relative cursor-pointer h-8 w-8"
@@ -287,6 +300,16 @@ export default function TopNav() {
               className="object-contain"
             />
           </Link>
+          {isLoggedIn ? (
+            <Profile />
+          ) : (
+            <button
+              onClick={() => router.push("/login")}
+              className="cursor-pointer text-6 font-bold text-[#FFFFFF]  bg-[#B88E2F] hover:bg-[#B88E0F] py-2 px-4 rounded-2xl"
+            >
+              log in
+            </button>
+          )}
         </div>
       </nav>
       <div className="">

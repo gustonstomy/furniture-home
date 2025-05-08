@@ -12,6 +12,7 @@ import "keen-slider/keen-slider.min.css";
 import Image from "next/image";
 
 import Skeleton from "react-loading-skeleton";
+import BlurImage from "../BlurImage";
 
 function ThumbnailPlugin(
   mainRef: React.MutableRefObject<KeenSliderInstance<
@@ -97,12 +98,13 @@ function ProductSlider({
                 key={index}
                 className="keen-slider__slide h-[400px] w-[400px] xl:h-[500px] 2xl:h-[500px] 3xl:h-[600px]  rounded-lg bg-[#F9F1E7] flex items-center justify-center"
               >
-                <Image
+                <BlurImage
                   src={image}
                   alt={`Slide ${index + 1}`}
-                  width={400}
-                  height={400}
-                  className="h-full w-full object-contain "
+                  className="object-contain bg-[#F9F1E7]"
+                  fill
+                  quality={85}
+                  style={{ objectFit: "contain" }}
                 />
               </div>
             ))}
@@ -122,10 +124,13 @@ function ProductSlider({
                 key={index}
                 className="keen-slider__slide !min-h-[70px] !min-w-[60px] !max-w-full !transform-none rounded-lg bg-[#F9F1E7] lg:!h-[60px]"
               >
-                <img
+                <BlurImage
                   src={image}
-                  alt={`Thumbnail ${index + 1}`}
-                  className="h-full w-full object-cover "
+                  alt={`Slide ${index + 1}`}
+                  className="object-contain bg-[#F9F1E7]"
+                  fill
+                  quality={85}
+                  style={{ objectFit: "contain" }}
                 />
               </div>
             ))}
