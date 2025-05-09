@@ -35,7 +35,7 @@ export default function CartPage() {
   };
 
   const formatCurrency = (amount: number) => {
-    return `Rs. ${amount.toLocaleString("en-IN", {
+    return ` Gh₵ ${amount.toLocaleString("en-IN", {
       minimumFractionDigits: 2,
     })}`;
   };
